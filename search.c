@@ -186,7 +186,7 @@ void Search( typePos *Position )
 	IsNewGame = false;
     StartClock = CLOCK_UCI = GetClock();
     PonderHit = false;
-    Position->StackHeight = -1;
+    Position->StackHeight = 0;
     RootBestMove = RootDepth = RootScore = 0;
 
     for ( p = Position->Root; p <= Position->Current; p++ )

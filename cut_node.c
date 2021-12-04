@@ -10,11 +10,11 @@
 
 int MyCut( typePos *Position, int VALUE, int depth )
     {
-    int move, i, Singular;
+    uint32_t move, i, Singular, Extend;
     int k;
     typeHash *rank;
     int trans_depth, move_depth = 0, trans_move = 0, Value, cnt;
-    int v, Extend, new_depth, move_is_check;
+    int v, new_depth, move_is_check;
     typeNext NextMove[1];
     typePosition *TempPosition = Position->Current;
     uint64_t zob = Position->Current->Hash;
@@ -318,8 +318,8 @@ int MyCut( typePos *Position, int VALUE, int depth )
 
 int MyCutCheck( typePos *Position, const int VALUE, const int depth )
     {
-    int move, Reduction, Extend;
-    int move_depth = 0, trans_move = 0, Value, new_depth, v, i;
+	uint32_t move, trans_move = 0, Reduction, Extend;
+    int move_depth = 0, Value, new_depth, v, i;
     typeMoveList List[512], *q;
     uint64_t zob = Position->Current->Hash;
     typePosition *TempPosition = Position->Current;

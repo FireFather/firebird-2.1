@@ -11,7 +11,8 @@ int MyPV( typePos *Position, int Alpha, int Beta, int depth, int check )
     {
     typeNext NextMove[1];
     typeHash *rank;
-    int good_move, v, Value, k, i, trans_depth, move, move_depth = 0, trans_move = 0, hash_depth;
+    uint32_t move, trans_move = 0;
+    int good_move, v, Value, k, i, trans_depth, move_depth = 0, hash_depth;
     int Singular;
     bool Split;
     int Extend, best_value, new_depth, move_is_check, to, fr;

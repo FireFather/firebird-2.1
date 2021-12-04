@@ -129,17 +129,17 @@ static void ParseFen(typePos* Position, const char* I)
         }
     }
 
-char *ReadFEN( typePos *Position, char *I )
+char *ReadFEN( typePos *Position, char *input )
     {
     char i[1024];
     bool ok = 0;
     int ep;
-    sscanf(I, "%s", i);
+    sscanf(input, "%s", i);
     ParseFen(Position, i);
     memset(Position->Root, 0, 256 * sizeof(typePosition));
     Position->Current = Position->Root;
-    I += strlen(i) + 1;
-    sscanf(I, "%s", i);
+    input += strlen(i) + 1;
+    sscanf(input, "%s", i);
 
     if( i[0] == 'w' )
         Position->wtm = true;
@@ -147,8 +147,8 @@ char *ReadFEN( typePos *Position, char *I )
     else if( i[0] == 'b' )
         Position->wtm = false;
 
-    I += strlen(i) + 1;
-    sscanf(I, "%s", i);
+    input += strlen(i) + 1;
+    sscanf(input, "%s", i);
     Position->Current->oo = 16;
 
     if( !strcmp(i, "KQkq") )
@@ -199,8 +199,8 @@ char *ReadFEN( typePos *Position, char *I )
     if( !strcmp(i, "-") )
         Position->Current->oo = 0;
 
-    I += strlen(i) + 1;
-    sscanf(I, "%s", i);
+    input += strlen(i) + 1;
+    sscanf(input, "%s", i);
     Position->Current->ep = 0;
 
     if( !strcmp(i, "-") )
@@ -234,14 +234,14 @@ char *ReadFEN( typePos *Position, char *I )
         if( ok )
             Position->Current->ep = ep;
         }
-    I += strlen(i) + 1;
-    sscanf(I, "%s", i);
+    input += strlen(i) + 1;
+    sscanf(input, "%s", i);
     Position->Current->reversible = (uint8_t)atoi(i);
-    I += strlen(i) + 1;
-    sscanf(I, "%s", i);
-    I += strlen(i) + 1;
+    input += strlen(i) + 1;
+    sscanf(input, "%s", i);
+    input += strlen(i) + 1;
     InitBitboards(Position);
-    return I;
+    return input;
     }
 
 static uint32_t FullMove(const typePos* Position, uint32_t x)

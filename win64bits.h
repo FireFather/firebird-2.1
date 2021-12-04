@@ -2,19 +2,19 @@
 #include <nmmintrin.h>
 
 #if defined(_WIN64) && defined(_MSC_VER)
-static int LSB(const UINT64 x )
+inline DWORD LSB (uint64_t b)
     {
-    int y;
-    _BitScanForward64(&y, x);
-    return y;
+    DWORD index;
+    _BitScanForward64(&index, b);
+    return (index);
     }
-static int MSB(const UINT64 x )
+inline DWORD MSB(uint64_t b )
     {
-    int y;
-    _BitScanReverse64(&y, x);
-    return y;
+    DWORD index;
+    _BitScanReverse64(&index, b);
+    return (index);
     }
-static __inline int POPCNT(const UINT64 b)
+static __inline uint64_t POPCNT(const uint64_t b)
 {
 	return (_mm_popcnt_u64(b));
 }

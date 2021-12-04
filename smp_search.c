@@ -139,7 +139,7 @@ void MyAllSMP( typePos* Position )
             return;
             }
         typeNext* NextMove = sp->MovePick;
-        int m = MyNext(Position, NextMove) & 0x7fff;
+        uint32_t m = MyNext(Position, NextMove) & 0x7fff;
         const int ph = NextMove->phase;
         const int c = NextMove->move;
 

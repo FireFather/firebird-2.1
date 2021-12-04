@@ -27,7 +27,8 @@ char *Notate( uint32_t move, char *M )
 
 void InitBitboards( typePos *Position )
     {
-    int i, pi;
+    int i;
+	int pi = 0;
     BoardIsOk = false;
 
     for ( i = 0; i < 16; i++ )

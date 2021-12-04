@@ -40,7 +40,7 @@ void SortOrdinary( typeMoveList *m1, typeMoveList *m2, const uint32_t s1, const 
     while( p > m1 )
         {
         p--;
-        int move = p->move;
+        uint32_t move = p->move;
 
         if( OK(move) )
             {
@@ -75,10 +75,12 @@ void SortOrdinary( typeMoveList *m1, typeMoveList *m2, const uint32_t s1, const 
     if (v >= av) ((L)++)->move = (x) | (v << 16); }
 
 #endif
+
 #define AddGainTo(T, pi)                           \
   { while (T)                                      \
       { to = LSB(T);                               \
     AddGain (List, (sq << 6) | to, pi, to); BitClear(to, T); } }
+
 #define Sort                                       \
   for (p = List - 1; p >= sm; p--)                 \
     { move = p->move;                              \
@@ -250,7 +252,7 @@ typeMoveList *MyPositionalGain( typePos *Position, typeMoveList *List, const int
     uint64_t U, T;
     int to, sq;
     typeMoveList *p, *q;
-    int move;
+    uint32_t move;
     typeMoveList* sm = List;
 
     for ( U = ForwardShift(BitboardMyP & SecondSixthRanks) & empty; U; BitClear(sq, U) )

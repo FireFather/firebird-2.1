@@ -267,8 +267,10 @@ int MyAll( typePos *Position, const int VALUE, const int depth )
 
 int MyAllCheck( typePos *Position, const int VALUE, const int depth )
     {
-    int move, Extend;
-    int move_depth = 0, trans_move = 0, Value, new_depth, v, i;
+    int Extend;
+    int move_depth = 0, Value, new_depth, v, i;
+	uint32_t move = 0; 
+	uint32_t trans_move = 0; 
     typeMoveList List[512], *q;
     uint64_t zob = Position->Current->Hash;
     typePosition *TempPosition = Position->Current;

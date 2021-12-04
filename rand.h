@@ -13,24 +13,3 @@ static uint64_t GetRand()
 		(uint64_t) RAND16() << 0;
     }
 
-typedef struct
-    {
-    uint64_t RandKey;
-    uint8_t pad[56];
-    } RAND;
-
-static RAND Rand[MaxCPUs];
-
-static uint32_t Random32(const int cpu )
-    {
-    Rand[cpu].RandKey = Rand[cpu].RandKey * 0x7913cc52088a6cfULL + 0x99f2e6bb0313ca0dULL;
-    return Rand[cpu].RandKey >> 18 & 0xffffffff;
-    }
-static void InitRandom32( uint64_t x )
-    {
-	    for ( int cpu = 0; cpu < MaxCPUs; cpu++ )
-        {
-        x = x * 0xb18ec564ff729005ULL + 0x86ee25701b5e244fULL;
-        Rand[cpu].RandKey = x;
-        }
-    }

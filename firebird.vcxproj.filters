@@ -176,9 +176,6 @@
     <ClInclude Include="white.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="win32bits.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="win64bits.h">
       <Filter>Header Files</Filter>
     </ClInclude>

@@ -76,7 +76,6 @@ void InitCaptureValues(void);
 void InitMaterialValue(void);
 void InitPawns(void);
 void InitPosition( typePos *, char * );
-void InitRandom32( uint64_t );
 void InitSearch(const typePos*, char*);
 void InitSMP(void);
 void InitStatic(void);

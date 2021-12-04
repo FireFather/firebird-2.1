@@ -10,8 +10,9 @@
 
 int MyExclude( typePos *Position, const int VALUE, const int depth, uint32_t Move )
     {
-    int move, i;
-    int move_depth = 0, trans_move = 0, Value;
+    uint32_t move, i;
+    uint32_t trans_move = 0, move_depth = 0;
+    int Value;
     int v, new_depth, move_is_check;
     typeNext NextMove[1];
     typePosition *TempPosition = Position->Current;
@@ -33,7 +34,7 @@ int MyExclude( typePos *Position, const int VALUE, const int depth, uint32_t Mov
 
         if( (rank->hash ^ zob >> 32) == 0 )
             {
-        	const int trans_depth = rank->DepthLower;
+        	const uint32_t trans_depth = rank->DepthLower;
             move = rank->move;
 
             if( move && trans_depth > move_depth )
@@ -248,8 +249,10 @@ int MyExclude( typePos *Position, const int VALUE, const int depth, uint32_t Mov
 
 int MyExcludeCheck( typePos *Position, const int VALUE, const int depth, uint32_t Move )
     {
-    int move, Extend;
-    int move_depth = 0, trans_move = 0, Value, new_depth, v, i;
+    uint32_t move, Extend;
+    uint32_t move_depth = 0;
+    uint32_t trans_move = 0;
+    int Value, new_depth, v, i;
     typeMoveList List[512], *q;
     uint64_t zob = Position->Current->Hash;
     typePosition *TempPosition = Position->Current;
@@ -270,7 +273,7 @@ int MyExcludeCheck( typePos *Position, const int VALUE, const int depth, uint32_
 
         if( (rank->hash ^ zob >> 32) == 0 )
             {
-        	const int trans_depth = rank->DepthLower;
+        	const uint32_t trans_depth = rank->DepthLower;
             move = rank->move;
 
             if( move && trans_depth > move_depth )

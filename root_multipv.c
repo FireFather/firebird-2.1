@@ -35,7 +35,7 @@ int MyMultiPV( typePos *Position, const int depth )
     int best_value;
     typeRootMoveList *p;
     typePosition *TempPosition = Position->Current;
-    uint32_t move;
+    uint32_t move = 0;
     int i;
     int Alpha = -ValueMate;
     int GoodMoves = 0;
@@ -56,7 +56,7 @@ int MyMultiPV( typePos *Position, const int depth )
     p = RootMoveList;
     int v = best_value = -ValueInfinity;
 
-    while( (move = p->move) )
+    while( (move == p->move) )
         {
 	        const int Beta = ValueMate;
 	        Make(Position, move);

@@ -27,7 +27,6 @@ void InitZobrist()
 
     for ( i = FA; i <= FH; i++ )
         ZobristEP[i] = GetRand();
-    InitRandom32(GetRand());
     }
 
 void InitArrays()
@@ -207,7 +206,7 @@ void InitArrays()
 
             if( file < 7 )
                 {
-                s = 1 << (file + 1);
+                s = (1) << (file + 1);
 
                 while( s < 256 )
                     {

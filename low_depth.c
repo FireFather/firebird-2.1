@@ -11,7 +11,7 @@
 int MyLowDepth( typePos *Position, const int VALUE, const int depth )
     {
     int Value, i, trans_move = 0;
-    int move, move_depth = 0;
+    int move = 0, move_depth = 0;
     typeNext NextMove[1];
     typePosition *TempPosition = Position->Current;
 
@@ -221,8 +221,10 @@ int MyLowDepth( typePos *Position, const int VALUE, const int depth )
 
 int MyLowDepthCheck( typePos *Position, const int VALUE, const int depth )
     {
-    int trans_move = 0, move_depth = 0;
-    int Value, i, move, v;
+    int move_depth = 0;
+    uint32_t trans_move = 0;
+    uint32_t move = 0;
+    int Value, i, v;
     typeMoveList List[512], *q;
     typePosition *TempPosition = Position->Current;
   

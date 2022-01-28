@@ -1,2 +1,0 @@
-C:\engine_dev\fireBird\x64\Release\FireBird.exe
-C:\engine_dev\firebird-2.0\x64\Release\FireBird.exe

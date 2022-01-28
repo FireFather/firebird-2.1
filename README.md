@@ -5,3 +5,7 @@
 ![alt tag](https://raw.githubusercontent.com/FireFather/firebird/master/firebird1.bmp)
 ![alt tag](https://raw.githubusercontent.com/FireFather/firebird/master/firebird3.bmp)
 ![alt tag](https://raw.githubusercontent.com/FireFather/firebird/master/firebird4.bmp)
+
+
+version 1.1 available here:
+https://github.com/FireFather/firebird-1.1

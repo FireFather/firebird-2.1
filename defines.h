@@ -1,7 +1,7 @@
 #pragma once
 
 #define NAME "FireBird"
-#define VERSION "1.1 x64"
+#define VERSION "2.1 x64"
 
 //#define true 1
 //#define false 0

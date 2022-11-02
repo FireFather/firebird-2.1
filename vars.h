@@ -1,20 +1,23 @@
 #pragma once
-bool AnalysisMode;
-bool BoardIsOk;
-bool DoInfinite;
-int DoPonder;
-bool DoSearchMoves;
-bool MultiHistory;
-bool MultiPosGain;
-bool IsNewGame;
-bool PonderHit;
-bool Stop;
-bool UCIPonder;
-bool JumpIsSet;
-bool EasyMove;
-bool BadMove;
-bool BattleMove;
-bool Analysing;
+int NumCPUs;
+
+boolean AnalysisMode;
+boolean BoardIsOk;
+boolean DoInfinite;
+boolean DoPonder;
+boolean DoSearchMoves;
+boolean ExtraInfo;
+boolean MultiHistory;
+boolean MultiPosGain;
+boolean IsNewGame;
+boolean PonderHit;
+boolean Stop;
+boolean UCIPonder;
+boolean JumpIsSet;
+boolean EasyMove;
+boolean BadMove;
+boolean BattleMove;
+boolean Analysing;
 
 char String1[64];
 char String2[64];
@@ -44,35 +47,35 @@ uint64_t BufferTime;
 uint64_t HashMask;
 uint64_t Age;
 uint64_t NodeCheck;
-int NumThreads;
+volatile uint64_t NumThreads;
 uint64_t StartClock;
-uint64_t CLOCK_UCI;
-uint64_t MOMENT;
 
 int64_t DesiredTime;
 extern jmp_buf J;
 
-uint64_t LastMessage;
+int64_t LastMessage;
 int64_t AbsoluteTime;
+int64_t Increment;
 int64_t BattleTime;
 int64_t EasyTime;
 int64_t OrdinaryTime;
 int64_t total_wtime;
 int64_t total_btime;
+int64_t TotalTime;
 
 int TotalMTG;
 int MTGPrev;
 int Depth;
-bool NewPonderHit;
+boolean NewPonderHit;
 
 static uint64_t HashSize = 0x400000;
-static bool FlagHashInit = 0;
+static boolean FlagHashInit = 0;
 
-bool Init[MaxCPUs];
-bool volatile PThreadExit[MaxCPUs];
+boolean Init[MaxCPUs];
+volatile boolean PThreadExit[MaxCPUs];
 volatile int SMPfree;
 volatile int init_threads;
-volatile bool SMPEnded;
+volatile boolean SMPEnded;
 volatile int active_threads;
 
 typePos* volatile Working[MaxCPUs];

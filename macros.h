@@ -11,7 +11,7 @@
 
 #define MemAlign(a, b, c) a = _aligned_malloc (c, b)
 #define FreeAligned(x) _aligned_free (x)
-#define builtin_prefetch(x, y, z) _mm_prefetch((char*)(x), z);
+#define __builtin_prefetch(x, y, z) _mm_prefetch((char*)(x), z);
 
 #define CheckHalt() { if (Position->stop) { return (0); } }
 #define UpdateAge() rank->age = Age;
@@ -150,7 +150,6 @@ uint16_t HISTORY[0x10][0100];
   { while (T)                              \
       { to = LSB(T); c = Position->sq[to]; \
     Add (List, (sq << 6) | to, w);  BitClear (to, T); } }
-
 
 #ifdef MultipleHistory
 #define MoveAdd(L, x, pi, to, check)                               \

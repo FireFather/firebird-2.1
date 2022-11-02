@@ -4,7 +4,7 @@
 #include <stdlib.h>
 #include <setjmp.h>
 #include <time.h>
-#include <Windows.h>
+#include <windows.h>
 
 #include "pragma.h"
 #include "defines.h"

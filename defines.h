@@ -1,15 +1,10 @@
 #pragma once
-#include <stdint.h>
-
-#include "win64bits.h"
 
 #define NAME "FireBird"
-#define VERSION "2 x64"
+#define VERSION "1.1 x64"
 
-#define BENCHMARK
-
-#define true 1
-#define false 0
+//#define true 1
+//#define false 0
 
 #define MaxCPUs 16
 #define MaxThreads 32
@@ -29,6 +24,7 @@
 #define InitLock(x) InitializeCriticalSection(x)
 #define InitCond(x, y) (x) = CreateEvent (0, false, false, 0)
 #define PThreadCreate(N, b, thr, d) CreateThread (NULL, 0, thr, (LPVOID) (d), 0, (LPDWORD)(N));
+#include <stdint.h>
 DWORD PThread[MaxCPUs];
 #define SMPThread(A) DWORD WINAPI smp_thread (LPVOID A)
 
@@ -307,5 +303,4 @@ uint64_t EvalHash[EvalHashSize];
 #define CNSplitDepth 14
 #define PVSplitDepth 12
 
-#define NullMoveVerification true
 #define VerificationReduction 7

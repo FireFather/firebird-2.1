@@ -69,7 +69,7 @@
     <ClCompile Include="pawn_eval.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="pst.c">
+    <ClCompile Include="PST.c">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="pv_node.c">
@@ -93,16 +93,16 @@
     <ClCompile Include="search.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="see.c">
+    <ClCompile Include="SEE.c">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="set_position.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="smp.c">
+    <ClCompile Include="SMP.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="smp_search.c">
+    <ClCompile Include="SMP_search.c">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="top_analysis.c">
@@ -176,7 +176,7 @@
     <ClInclude Include="white.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="win64bits.h">
+    <ClInclude Include="bitops.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

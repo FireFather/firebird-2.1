@@ -1,5 +1,5 @@
 # firebird-2.1
- updated version of the original engine from 2010
+**updated version of the original engine from 2010**
 
 ![alt tag](https://raw.githubusercontent.com/FireFather/firebird/master/logos/firebird2.bmp)
 ![alt tag](https://raw.githubusercontent.com/FireFather/firebird/master/logos/firebird1.bmp)
